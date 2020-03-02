@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Tork Immo{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset("libs/css/index.css") }}">
+    {% block stylesheets %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+<header>
+    <div class="navbar bg-secondary text-white mb-5">
+        <a href="{{ path('home') }}"> <img src="{{ asset("libs/images/logo.jpg") }}" alt="logo"></a>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ path('produits_index') }}">Louer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Acheter</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+            </li>
+
+
+
+
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+            {% else %}
+                </li>
+               {# <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                </li>#}
+            {% endif %}
+
+        </ul>
+    </div>
+</header>
+
+
+
+
+{% block body %}
+
+{% endblock %}
+
+
+
+
+<footer>
+    <div class="row justify-content-space-between text-center bg-light w-100 ml-1">
+        <div class="col-md-12 ">
+            <div class="row ">
+                <div class="mx-auto">
+                    <h4>Notre agence</h4>
+                    <p>209 Rue de la Mairie</p>
+                    <p>59500 Douai</p>
+                    <a class="nav-link" href="{{ path('app_login') }}">Espace Administrateur</a>
+
+                </div>
+                <div class="mx-auto">
+                    <h4>Horraires</h4>
+                    <p>Lundi-Samedi</p>
+                    <p>10h-19h</p>
+                    <p>non-stop</p>
+                </div>
+                <div class="mx-auto">
+                    <h4>Coordonnées</h4>
+                    <p>03-27-92-18-13</p>
+                    <p><a href="mailto:torkimmo@gmail.fr?subject=Demande de renseignements"> torkimmo@gmail.fr </a></p>
+                    <p class="btn btn-primary pl-2 "><a href="view/contact.html " class="text-dark"> Contactez-nous </a></p>
+                </div>
+                <div class="mx-auto">
+                    <h4>Nous suivre</h4>
+                    <ul class="list-unstyled pt-2">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"> <span class="fa fa-facebook-official fa-3x " aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank"> <span class="fa fa-linkedin fa-3x " aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank"> <span class="fa fa-twitter fa-3x " aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</footer>
+
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG_RYe8EUM6I3VEf0xREpxzJVcmHt675A&callback=initMap"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+{% block javascripts %}
+
+
+{% endblock %}
+
+</body>
+</html>

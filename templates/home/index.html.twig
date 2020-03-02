@@ -1,0 +1,265 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur TorkImmo{% endblock %}
+
+ {% block stylesheets %}
+
+
+
+ {% endblock %}
+
+{% block body %}
+    <div class="header-description fullcontainer content-on-center w">
+        <div class="row header-description-row middle-sm">
+            <div class="header-content header-content-centered col-md col-xs-12 ">
+                <div class="div_titre_banner  mx-auto text-center">
+                    <!--texte défilent-->
+                    <div class="cyber">
+                        <h3 class="titre_fard my-2"> Tork ImmO!</h3>
+                    </div>
+                    <div class="cyber my-2"><span id="aide">Le logement devient beau!</span></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h1 class="text-center mb-5 mt-4">Quelques nouveautés</h1>
+
+    <div id="carouselExampleControls" class="carousel slide w-75 mx-auto mb-5" data-ride="carousel">
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <div class="card-deck">
+
+                    <div class="card ">
+                        <a href="view/lot1.html" class="textCard">
+                            <img src="{{ asset("libs/images/maisons.jpg") }}" class="card-img-top" alt="maison">
+                            <div class="card-body">
+                                <h5 class="card-title"> Location : Maison 5 pièces </h5>
+                                <p class="card-text">Agréable maison rénovée offrant 110 m² hab. comprenant : entrée, cuisine équipée ouverte sur séjour, salle de bains, WC, 1 chambre au rdc. A l'étage : 2 chambres et bureau, salle de jeux, chauffage gaz, double vitrage et
+                                    volets. 2 garages, cave, terrasse et jardin. Etat impeccable. Libre le 1 novembre 2018. Honoraires locataire avec état des lieux 920 €.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot2.html" class="textCard">
+                            <img src="{{ asset("libs/images/appart1.jpg") }}" class="card-img-top" alt="appartement">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Appartement 4 pièces.</h5>
+                                <p class="card-text">Appartement comprenant un hall d'entrée avec placards ,double séjour, cuisine meublée et équipée, trois chambres, une salle de bains, un WC, une lingerie, un balcon, une cave, un garage et une place de parking couverte.
+                                    ** Loyer 945 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot3.html" class="textCard">
+                            <img src="{{ asset("libs/images/bar.jpg") }}" class="card-img-top" alt="bar">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Local commercial</h5>
+                                <p class="card-text">Grand local commercial pouvant accueillir de la restauration, bureaux, commerces. comprenant une salle de 50m² environ, deux salles de 20 m², deux WC, et une cave. Situé sur la grande route pour plus de visibilité. Une
+                                    visite s'impose!!! ** Loyer 1 100 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="card-deck">
+                    <div class="card ">
+                        <a href="view/lot2.html" class="textCard">
+                            <img src="{{ asset("libs/images/appart1.jpg") }}" class="card-img-top" alt="appartement">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Appartement 4 pièces.</h5>
+                                <p class="card-text">Appartement comprenant un hall d'entrée avec placards ,double séjour, cuisine meublée et équipée, trois chambres, une salle de bains, un WC, une lingerie, un balcon, une cave, un garage et une place de parking couverte.
+                                    ** Loyer 945 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot1.html" class="textCard">
+                            <img src="{{ asset("libs/images/maisons.jpg") }}" class="card-img-top" alt="maison">
+                            <div class="card-body">
+                                <h5 class="card-title"> Location : Maison 5 pièces </h5>
+                                <p class="card-text">Agréable maison rénovée offrant 110 m² hab. comprenant : entrée, cuisine équipée ouverte sur séjour, salle de bains, WC, 1 chambre au rdc. A l'étage : 2 chambres et bureau, salle de jeux, chauffage gaz, double vitrage et
+                                    volets. 2 garages, cave, terrasse et jardin. Etat impeccable. Libre le 1 novembre 2018. Honoraires locataire avec état des lieux 920 €.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot3.html" class="textCard">
+                            <img src="{{ asset("libs/images/bar.jpg") }}" class="card-img-top" alt="bar">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Local commercial</h5>
+                                <p class="card-text">Grand local commercial pouvant accueillir de la restauration, bureaux, commerces. comprenant une salle de 50m² environ, deux salles de 20 m², deux WC, et une cave. Situé sur la grande route pour plus de visibilité. Une
+                                    visite s'impose!!! ** Loyer 1 100 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="card-deck">
+                    <div class="card ">
+                        <a href="view/lot3.html" class="textCard">
+                            <img src="{{ asset("libs/images/bar.jpg") }}" class="card-img-top" alt="bar">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Local commercial</h5>
+                                <p class="card-text">Grand local commercial pouvant accueillir de la restauration, bureaux, commerces. comprenant une salle de 50m² environ, deux salles de 20 m², deux WC, et une cave. Situé sur la grande route pour plus de visibilité. Une
+                                    visite s'impose!!! ** Loyer 1 100 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot1.html" class="textCard">
+                            <img src="{{ asset("libs/images/maisons.jpg") }}" class="card-img-top" alt="maison">
+                            <div class="card-body">
+                                <h5 class="card-title"> Location : Maison 5 pièces </h5>
+                                <p class="card-text">Agréable maison rénovée offrant 110 m² hab. comprenant : entrée, cuisine équipée ouverte sur séjour, salle de bains, WC, 1 chambre au rdc. A l'étage : 2 chambres et bureau, salle de jeux, chauffage gaz, double vitrage et
+                                    volets. 2 garages, cave, terrasse et jardin. Etat impeccable. Libre le 1 novembre 2018. Honoraires locataire avec état des lieux 920 €.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card ">
+                        <a href="view/lot2.html" class="textCard">
+                            <img src="{{ asset("libs/images/appart1.jpg") }}" class="card-img-top" alt="appartement">
+                            <div class="card-body">
+                                <h5 class="card-title">Location : Appartement 4 pièces.</h5>
+                                <p class="card-text">Appartement comprenant un hall d'entrée avec placards ,double séjour, cuisine meublée et équipée, trois chambres, une salle de bains, un WC, une lingerie, un balcon, une cave, un garage et une place de parking couverte.
+                                    ** Loyer 945 €/mois charges comprises .</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--Bouton filter-->
+    <div class="border  mb-5 mt-3 w-50 mx-auto">
+        <div class="row mx-auto" id="filtre">
+            <h6 class="display-4">Quel bien recherchez-vous?</h6>
+            <a class="btn btn-dark mt-2 mb-2 mr-2 ml-auto " id="titreFiltre" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fas fa-filter text-light pt-5"></i>&nbsp;Filtrer
+            </a>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body mb-2">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="choix">Je souhaite</label>
+                            <select class="form-control form-control-sm verif" id="choix">
+                                <option value="acheter">Acheter</option>
+                                <option value="louer">Louer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="bien">Type de bien</label>
+                            <select class="form-control form-control-sm verif" id="bien">
+                                <option value="maison">Maison</option>
+                                <option value="appartement">Appartement</option>
+                                <option value="localCommercial">Local commercial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="piece">Nombre de pièces</label>
+                            <select class="form-control form-control-sm verif" id="piece">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="localisation">Localisation</label>
+                            <select class="form-control form-control-sm verif" id="localisation">
+                                <option value="">Toutes les localités</option>
+                                <option value="">59 Nord</option>
+                                <option value="">Douai (59500)</option>
+                                <option value="">Lille (59000)</option>
+                                <option value="">Loos (59120)</option>
+                                <option value="">Ronchin (59790)</option>
+                                <option value="">Tourcoing (59200)</option>
+                                <option value="">Wattignies (59139)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row">
+                            <label for="budget" class="col-sm-2 col-form-label">Buget max</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="budget" aria-label="budget">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row">
+                            <label for="surface" class="col-sm-2 col-form-label">Surface max</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="surface" aria-label="surface">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">m²</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-dark btn-lg btn-block">Rechercher</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-2 col-md-12 w-100 infomap ml-0">
+        <div class="col-md-5 mb-3 mx-auto" id="bref">
+            <h2 class="text-center text-white mt-2">TorkImmo en bref</h2>
+            <p class="text-center text-white mt-5"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum mauris id ex accumsan suscipit. Nullam semper risus at felis molestie, sit amet dignissim risus vehicula. Quisque sit amet felis diam. Maecenas rutrum leo id libero
+                semper, nec sodales ex feugiat. Curabitur eu vestibulum metus, eu vestibulum est. Nullam nec augue eget metus dignissim maximus nec sit amet eros. Maecenas suscipit magna ut ante facilisis molestie. Sed consectetur lorem et metus porta
+                posuere. Donec lorem neque, hendrerit at ante et, rutrum eleifend justo. Ut egestas venenatis vestibulum. Aenean maximus ligula eget erat cursus, sed sagittis felis congue. Maecenas ac quam nibh. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed ut elit tellus. Quisque elementum in nibh nec cursus. Aliquam in risus et lectus ullamcorper tempus. Pellentesque interdum facilisis tristique. Ut at velit a leo lacinia vestibulum. Etiam vel aliquam ligula, sit amet
+                placerat augue.</p>
+        </div>
+        <div class="col-md-5 mb-3 mx-auto">
+            <div id="map">
+
+            </div>
+
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    <script> href="{{ asset("libs/js/index.js") }}"</script>
+{% endblock %}
+
