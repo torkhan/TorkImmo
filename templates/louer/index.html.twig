@@ -1,15 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produits index{% endblock %}
+{% block title %}Nos biens à la location{% endblock %}
 
 {% block body %}
     <div class="container">
-        <div class="row">
-            <h1>Nos biens</h1>
-            {% if is_granted('ROLE_ADMIN') %}
-                <h1 class="ml-auto"><a  href="{{ path('produits_new') }}">Ajouter un bien</a></h1>
-            {% endif %}
-        </div>
+        <h1>Nos biens à la location</h1>
         <div class="card mb-4">
             {%  for pag in pagination %}
                 <div class="card-body">
@@ -17,9 +12,8 @@
                         {{ pag.typeProduits.type }}
                     </h5>
                     <hr>
-                   {# {% if pag.filename %}
-                    {% endif %}#}
-                    <img src="{{ vich_uploader_asset(pag, 'photoBase') }}" style="width:50%; height: auto" class="card-img-top" alt="">
+                    <div class="text-center">
+                        <img  src="{{ vich_uploader_asset(pag, 'photoBase') }}" style="width:50%; height: auto" alt=""></div>
                     <p class="card-text">
                         {{ pag.adresse }}
                     </p>
@@ -44,11 +38,6 @@
                 {{ knp_pagination_render(pagination) }}
             </div>
         </div>
-
-
-
-
-
 
     </div>
 {% endblock %}

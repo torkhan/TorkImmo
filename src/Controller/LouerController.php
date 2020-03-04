@@ -11,24 +11,22 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/produits")
- */
-class ProduitsController extends AbstractController
+class LouerController extends AbstractController
 {
     /**
-     * @Route("/", name="produits_index", methods={"GET"})
+     * @Route("/louer", name="louer_index")
      */
-    public function index(Request $request, ProduitsRepository $produitsRepository, PaginatorInterface $paginator): Response
+    public function index(Request $request,ProduitsRepository $produitsRepository, PaginatorInterface $paginator): Response
     {
-
         $pagination = $paginator->paginate(
-            $produitsRepository->findAllVisibleQuery(),
-            $request->query->getInt('page', 1), /*page number*/
+        $sql= $produitsRepository->findBy(["LocAchat"=>5]),
+
+        $request->query->getInt('page', 1), /*page number*/
             4/*limit per page*/
         );
-        return $this->render('produits/index.html.twig', [
-            'produits' => $produitsRepository->findAll(),
+
+        return $this->render('louer/index.html.twig', [
+            'produits' => $sql,
             'pagination' => $pagination,
         ]);
     }
@@ -40,7 +38,6 @@ class ProduitsController extends AbstractController
     {
 
         $produit = new Produits();
-
         $form = $this->createForm(ProduitsType::class, $produit);
         $form->handleRequest($request);
 
@@ -55,28 +52,16 @@ class ProduitsController extends AbstractController
         return $this->render('produits/new.html.twig', [
             'produit' => $produit,
             'form' => $form->createView(),
-
         ]);
     }
 
     /**
-     * @Route("/{id}/show", name="produits_show", methods={"GET"})
+     * @Route("/{id}", name="produits_show", methods={"GET"})
      */
     public function show(Produits $produit): Response
     {
         return $this->render('produits/show.html.twig', [
             'produit' => $produit,
-
-        ]);
-    }
-    /**
-     * @Route("/{id}/showAcheter", name="produits_showAcheter", methods={"GET"})
-     */
-    public function showAcheter(Produits $produit): Response
-    {
-        return $this->render('produits/showAcheter.html.twig', [
-            'produit' => $produit,
-
         ]);
     }
 

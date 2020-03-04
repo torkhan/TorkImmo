@@ -3,9 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProduitsRepository")
+ * @Vich\Uploadable
  */
 class Produits
 {
@@ -22,7 +26,7 @@ class Produits
     private $adresse;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=2)
+     * @ORM\Column(type="string", length=100)
      */
     private $prixHt;
 
@@ -32,7 +36,7 @@ class Produits
     private $nombreChambre;
 
     /**
-     * @ORM\Column(type="decimal", precision=5, scale=0)
+     * @ORM\Column(type="string", length=100)
      */
     private $surface;
 
@@ -47,27 +51,32 @@ class Produits
     private $latitude;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
      */
     private $photoBase;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image1")
+     * @var File
      */
     private $photo1;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image2")
+     * @var File
      */
     private $photo2;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image3")
+     * @var File
      */
     private $photo3;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image4")
+     * @var File
      */
     private $photo4;
 
@@ -98,6 +107,43 @@ class Produits
      * @ORM\Column(type="string", length=255)
      */
     private $Description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image1;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image2;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image3;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image4;
+
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -176,65 +222,95 @@ class Produits
         return $this;
     }
 
-    public function getPhotoBase(): ?string
+    public function setphotoBase(File $image = null)
+    {
+        $this->photoBase = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getphotoBase()
     {
         return $this->photoBase;
     }
 
-    public function setPhotoBase(string $photoBase): self
+    public function setphoto1(File $image1 = null)
     {
-        $this->photoBase = $photoBase;
+        $this->photo1 = $image1;
 
-        return $this;
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image1) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function getPhoto1(): ?string
+    public function getphoto1()
     {
         return $this->photo1;
     }
-
-    public function setPhoto1(?string $photo1): self
+    public function setphoto2(File $image2 = null)
     {
-        $this->photo1 = $photo1;
+        $this->photo2 = $image2;
 
-        return $this;
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image2) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function getPhoto2(): ?string
+    public function getphoto2()
     {
         return $this->photo2;
     }
 
-    public function setPhoto2(?string $photo2): self
+    public function setphoto3(File $image3 = null)
     {
-        $this->photo2 = $photo2;
+        $this->photo3 = $image3;
 
-        return $this;
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image3) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function getPhoto3(): ?string
+    public function getphoto3()
     {
         return $this->photo3;
     }
 
-    public function setPhoto3(?string $photo3): self
+    public function setphoto4(File $image4 = null)
     {
-        $this->photo3 = $photo3;
+        $this->photo4 = $image4;
 
-        return $this;
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image4) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function getPhoto4(): ?string
+    public function getphoto4()
     {
         return $this->photo4;
     }
 
-    public function setPhoto4(?string $photo4): self
-    {
-        $this->photo4 = $photo4;
-
-        return $this;
-    }
 
     public function getDateDeCreation(): ?\DateTimeInterface
     {
@@ -294,5 +370,55 @@ class Produits
         $this->Description = $Description;
 
         return $this;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage1($image1)
+    {
+        $this->image1 = $image1;
+    }
+
+    public function getImage1()
+    {
+        return $this->image1;
+    }
+
+    public function setImage2($image2)
+    {
+        $this->image2 = $image2;
+    }
+
+    public function getImage2()
+    {
+        return $this->image2;
+    }
+
+    public function setImage3($image3)
+    {
+        $this->image3 = $image3;
+    }
+
+    public function getImage3()
+    {
+        return $this->image3;
+    }
+
+    public function setImage4($image4)
+    {
+        $this->image4 = $image4;
+    }
+
+    public function getImage4()
+    {
+        return $this->image4;
     }
 }

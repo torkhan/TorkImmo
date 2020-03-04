@@ -8,6 +8,7 @@ use App\Entity\TypeProduit;
 use App\Entity\Zip;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,32 +20,45 @@ class ProduitsType extends AbstractType
             ->add('typeProduits',  EntityType::class,array(
             'class' => TypeProduit::class,
             'required' => false,
-
             'choice_label' => 'type',))
             ->add('adresse')
+            ->add('ville',  EntityType::class,array(
+                'class' => Zip::class,
+                'required' => false,
+                'choice_label' => 'nomVille'))
+
             ->add('prixHt')
             ->add('description')
             ->add('nombreChambre')
             ->add('surface')
             ->add('longitude')
             ->add('latitude')
-            ->add('photoBase')
-            ->add('photo1')
-            ->add('photo2')
-            ->add('photo3')
-            ->add('photo4')
-            ->add('dateDeCreation')
-
-            ->add('ville',  EntityType::class,array(
-                'class' => Zip::class,
+            ->add('photoBase', FileType::class, array(
                 'required' => false,
 
-                'choice_label' => 'nomVille',))
+
+
+
+            ))
+            ->add('photo1', FileType::class, array(
+                'required' => false
+            ))
+            ->add('photo2', FileType::class, array(
+                'required' => false
+            ))
+            ->add('photo3', FileType::class, array(
+                'required' => false
+            ))
+            ->add('photo4', FileType::class, array(
+                'required' => false
+            ))
+            ->add('dateDeCreation')
             ->add('LocAchat',  EntityType::class,array(
                 'class' => LocAchat::class,
                 'required' => false,
 
-                'choice_label' => 'type',))
+                'choice_label' => 'type'))
+
         ;
     }
 

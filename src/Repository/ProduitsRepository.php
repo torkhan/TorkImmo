@@ -22,19 +22,35 @@ class ProduitsRepository extends ServiceEntityRepository
     // /**
     //  * @return Produits[] Returns an array of Produits objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findProduit($value)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+
+            ->innerJoin('p.zip', 'z', 'WITH', ' z.id = p.zip')
+            ->innerJoin('p.typeProduit', 't', 'WITH', ' t.id = p.typeProduit')
+            ->innerJoin('p.locAchat', 'l', 'WITH', ' l.id = p.locAchat')
+
+            ->andWhere('p.adresse = :val')
+            ->orWhere('p.prixHt like :val')
+            ->orWhere('p.nombreChambre like :val')
+            ->orWhere('p.surface like :val')
+            ->orWhere('p.longitude like :val')
+            ->orWhere('p.latitude like :val')
+            ->orWhere('p.dateDeCreation like :val')
+            ->orWhere('p.description like :val')
+            ->orWhere('z.zip like :val')
+            ->orWhere('t.typeProduit like :val')
+            ->orWhere('l.locAchat like :val')
+
+            ->setParameter('val', '%'.$value.'%')
             ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Produits
@@ -47,4 +63,9 @@ class ProduitsRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllVisibleQuery()
+    {return $this->createQueryBuilder('p')
+        ->getQuery()
+        ->getResult();
+    }
 }

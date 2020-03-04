@@ -20,10 +20,13 @@
         <a href="{{ path('home') }}"> <img src="{{ asset("libs/images/logo.jpg") }}" alt="logo"></a>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link active" href="{{ path('produits_index') }}">Louer</a>
+                <a class="nav-link active" href="{{ path('produits_index') }}">Tout nos biens</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Acheter</a>
+                <a class="nav-link active" href="{{ path('louer_index') }}">Louer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('acheter') }}">Acheter</a>
             </li>
 
             <li class="nav-item">
@@ -77,8 +80,8 @@
                 <div class="mx-auto">
                     <h4>Coordonnées</h4>
                     <p>03-27-92-18-13</p>
-                    <p><a href="mailto:torkimmo@gmail.fr?subject=Demande de renseignements"> torkimmo@gmail.fr </a></p>
-                    <p class="btn btn-primary pl-2 "><a href="view/contact.html " class="text-dark"> Contactez-nous </a></p>
+                    <p> torkimmo@gmail.fr </p>
+                    <p class="btn btn-primary pl-2 "><a href="{{ path('contact') }}" class="text-dark"> Contactez-nous </a></p>
                 </div>
                 <div class="mx-auto">
                     <h4>Nous suivre</h4>

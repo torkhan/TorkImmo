@@ -7,7 +7,7 @@
         <div class="row">
             <h1>Détails</h1>
 
-            <h1 class="ml-auto"><a href="{{ path('louer_index') }}">Retour à la liste</a></h1>
+            <h1 class="ml-auto"><a href="{{ path('acheter') }}">Retour à la liste</a></h1>
 
         </div>
 
@@ -42,7 +42,6 @@
                 <th>DateDeCreation</th>
                 <td>{{ produit.dateDeCreation ? produit.dateDeCreation|date('d-m-Y') : '' }}</td>
             </tr>
-
             <tr>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -52,29 +51,29 @@
                     </ol>
                     <div class="carousel-inner">
                         {% if('photobase') != null %}
-                        <div class="carousel-item active text-center" >
-                            <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="">
-                        </div>
+                            <div class="carousel-item active text-center" >
+                                <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="">
+                            </div>
                         {% endif %}
                         {% if(produit.image1) != "" %}
-                        <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="">
-                        </div>
+                            <div class="carousel-item text-center">
+                                <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="">
+                            </div>
                         {% endif %}
                         {% if(produit.image2) != "" %}
-                        <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="">
-                        </div>
+                            <div class="carousel-item text-center">
+                                <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="">
+                            </div>
                         {% endif %}
                         {% if(produit.image3) != "" %}
-                        <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="">
-                        </div>
+                            <div class="carousel-item text-center">
+                                <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="">
+                            </div>
                         {% endif %}
                         {% if(produit.image4) != "" %}
-                        <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="">
-                        </div>
+                            <div class="carousel-item text-center">
+                                <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="">
+                            </div>
                             {% dump(produit) %}
                         {% endif %}
                     </div>
@@ -91,7 +90,6 @@
 
 
             </tr>
-
             </tbody>
         </table>
 
