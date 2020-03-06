@@ -28,9 +28,21 @@ class TypeProduit
      */
     private $produits;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Recherche", mappedBy="typeProduits")
+     */
+    private $recherches;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ParDate", mappedBy="typeProduits")
+     */
+    private $parDates;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->recherches = new ArrayCollection();
+        $this->parDates = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -75,6 +87,68 @@ class TypeProduit
             // set the owning side to null (unless already changed)
             if ($produit->getTypeProduitsId() === $this) {
                 $produit->setTypeProduitsId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Recherche[]
+     */
+    public function getRecherches(): Collection
+    {
+        return $this->recherches;
+    }
+
+    public function addRecherch(Recherche $recherch): self
+    {
+        if (!$this->recherches->contains($recherch)) {
+            $this->recherches[] = $recherch;
+            $recherch->setTypeProduits($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecherch(Recherche $recherch): self
+    {
+        if ($this->recherches->contains($recherch)) {
+            $this->recherches->removeElement($recherch);
+            // set the owning side to null (unless already changed)
+            if ($recherch->getTypeProduits() === $this) {
+                $recherch->setTypeProduits(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ParDate[]
+     */
+    public function getParDates(): Collection
+    {
+        return $this->parDates;
+    }
+
+    public function addParDate(ParDate $parDate): self
+    {
+        if (!$this->parDates->contains($parDate)) {
+            $this->parDates[] = $parDate;
+            $parDate->setTypeProduits($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParDate(ParDate $parDate): self
+    {
+        if ($this->parDates->contains($parDate)) {
+            $this->parDates->removeElement($parDate);
+            // set the owning side to null (unless already changed)
+            if ($parDate->getTypeProduits() === $this) {
+                $parDate->setTypeProduits(null);
             }
         }
 

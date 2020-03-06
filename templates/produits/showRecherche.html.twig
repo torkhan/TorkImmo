@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+  {% block title %}Détails{% endblock %}
+
+  {% block body %}
+    <div class="container">
+      <div class="row">
+        <h1>Détails</h1>
+        {% if app.request.get('_route') != app.request.headers.get('referer') %}
+        <h1 class="ml-auto"><a href="{{ path('referer') }}">Retour à la liste</a></h1>
+        {% endif %}{#app.request.headers.get('referer')#}
+      </div>
+
+      <table class="table">
+        <tbody>
+        <tr>
+          <th>Type</th>
+          <td>{{ produit.typeProduits.type }}</td>
+        </tr>
+        <tr>
+          <th>Adresse</th>
+          <td>{{ produit.adresse }}</td>
+        </tr>
+        <tr>
+          <th>Ville</th>
+          <td>{{ produit.ville.nomVille }}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{ produit.description }}</td>
+        </tr>
+        <tr>
+          <th>PrixHt</th>
+          <td>{{ produit.prixHt }}</td>
+        </tr>
+        <tr>
+          <th>NombreChambre</th>
+          <td>{{ produit.nombreChambre }}</td>
+        </tr>
+        <tr>
+          <th>Surface</th>
+          <td>{{ produit.surface }}</td>
+        </tr>
+
+        <tr>
+          <th>DateDeCreation</th>
+          <td>{{ produit.dateDeCreation ? produit.dateDeCreation|date('d-m-Y') : '' }}</td>
+        </tr>
+
+        <tr>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              {% if('photobase') != null %}
+                <div class="carousel-item active text-center" >
+                  <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="">
+                </div>
+              {% endif %}
+              {% if(produit.image1) != "" %}
+                <div class="carousel-item text-center">
+                  <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="">
+                </div>
+              {% endif %}
+              {% if(produit.image2) != "" %}
+                <div class="carousel-item text-center">
+                  <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="">
+                </div>
+              {% endif %}
+              {% if(produit.image3) != "" %}
+                <div class="carousel-item text-center">
+                  <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="">
+                </div>
+              {% endif %}
+              {% if(produit.image4) != "" %}
+                <div class="carousel-item text-center">
+                  <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="">
+                </div>
+                {% dump(produit) %}
+              {% endif %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
+
+        </tr>
+
+        </tbody>
+      </table>
+
+
+      {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('produits_edit', {'id': produit.id}) }}">edit</a>
+
+        {{ include('produits/_delete_form.html.twig') }}
+      {% endif %}
+    </div>
+  {% endblock %}
+

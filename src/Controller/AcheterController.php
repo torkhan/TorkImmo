@@ -25,7 +25,7 @@ class AcheterController extends AbstractController
             4/*limit per page*/
         );
 
-        return $this->render('acheter/index.html.twig', [
+        return $this->render('acheter/recherche.html.twig', [
             'produits' => $sql,
             'pagination' => $pagination,
         ]);

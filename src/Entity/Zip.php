@@ -33,9 +33,15 @@ class Zip
      */
     private $produits;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Recherche", mappedBy="ville")
+     */
+    private $recherches;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->recherches = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -92,6 +98,37 @@ class Zip
             // set the owning side to null (unless already changed)
             if ($produit->getVilleId() === $this) {
                 $produit->setVilleId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Recherche[]
+     */
+    public function getRecherches(): Collection
+    {
+        return $this->recherches;
+    }
+
+    public function addRecherch(Recherche $recherch): self
+    {
+        if (!$this->recherches->contains($recherch)) {
+            $this->recherches[] = $recherch;
+            $recherch->setVille($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecherch(Recherche $recherch): self
+    {
+        if ($this->recherches->contains($recherch)) {
+            $this->recherches->removeElement($recherch);
+            // set the owning side to null (unless already changed)
+            if ($recherch->getVille() === $this) {
+                $recherch->setVille(null);
             }
         }
 

@@ -28,9 +28,21 @@ class LocAchat
      */
     private $produits;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Recherche", mappedBy="LocAchat")
+     */
+    private $recherches;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ParDate", mappedBy="LocAchat")
+     */
+    private $parDates;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->recherches = new ArrayCollection();
+        $this->parDates = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -75,6 +87,68 @@ class LocAchat
             // set the owning side to null (unless already changed)
             if ($produit->getLocAchatId() === $this) {
                 $produit->setLocAchatId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Recherche[]
+     */
+    public function getRecherches(): Collection
+    {
+        return $this->recherches;
+    }
+
+    public function addRecherch(Recherche $recherch): self
+    {
+        if (!$this->recherches->contains($recherch)) {
+            $this->recherches[] = $recherch;
+            $recherch->setLocAchat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecherch(Recherche $recherch): self
+    {
+        if ($this->recherches->contains($recherch)) {
+            $this->recherches->removeElement($recherch);
+            // set the owning side to null (unless already changed)
+            if ($recherch->getLocAchat() === $this) {
+                $recherch->setLocAchat(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ParDate[]
+     */
+    public function getParDates(): Collection
+    {
+        return $this->parDates;
+    }
+
+    public function addParDate(ParDate $parDate): self
+    {
+        if (!$this->parDates->contains($parDate)) {
+            $this->parDates[] = $parDate;
+            $parDate->setLocAchat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParDate(ParDate $parDate): self
+    {
+        if ($this->parDates->contains($parDate)) {
+            $this->parDates->removeElement($parDate);
+            // set the owning side to null (unless already changed)
+            if ($parDate->getLocAchat() === $this) {
+                $parDate->setLocAchat(null);
             }
         }
 

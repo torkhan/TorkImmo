@@ -7,7 +7,7 @@
         <div class="row">
             <h1>Détails</h1>
 
-            <h1 class="ml-auto"><a href="{{ path('acheter') }}">Retour à la liste</a></h1>
+            <h1 class="ml-auto"><a href="{{ path('produits_index') }}">Retour à la liste</a></h1>
 
         </div>
 
@@ -46,6 +46,7 @@
                 <th>DateDeCreation</th>
                 <td>{{ produit.dateDeCreation ? produit.dateDeCreation|date('d-m-Y') : '' }}</td>
             </tr>
+
             <tr>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -94,6 +95,7 @@
 
 
             </tr>
+
             </tbody>
         </table>
 

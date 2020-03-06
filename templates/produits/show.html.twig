@@ -22,6 +22,10 @@
                 <td>{{ produit.adresse }}</td>
             </tr>
             <tr>
+                <th>Ville</th>
+                <td>{{ produit.ville.nomVille }}</td>
+            </tr>
+            <tr>
                 <th>Description</th>
                 <td>{{ produit.description }}</td>
             </tr>
@@ -53,27 +57,27 @@
                     <div class="carousel-inner">
                         {% if('photobase') != null %}
                         <div class="carousel-item active text-center" >
-                            <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="">
+                            <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="1">
                         </div>
                         {% endif %}
                         {% if(produit.image1) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="">
+                            <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="2">
                         </div>
                         {% endif %}
                         {% if(produit.image2) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="">
+                            <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="3">
                         </div>
                         {% endif %}
                         {% if(produit.image3) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="">
+                            <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="4">
                         </div>
                         {% endif %}
                         {% if(produit.image4) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="">
+                            <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="5">
                         </div>
                             {% dump(produit) %}
                         {% endif %}

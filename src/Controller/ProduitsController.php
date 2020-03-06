@@ -27,7 +27,7 @@ class ProduitsController extends AbstractController
             $request->query->getInt('page', 1), /*page number*/
             4/*limit per page*/
         );
-        return $this->render('produits/index.html.twig', [
+        return $this->render('produits/recherche.html.twig', [
             'produits' => $produitsRepository->findAll(),
             'pagination' => $pagination,
         ]);
@@ -58,6 +58,26 @@ class ProduitsController extends AbstractController
 
         ]);
     }
+    /**
+     * @Route("/{id}/showAll", name="produits_showAll", methods={"GET"})
+     */
+    public function showAll(Produits $produit): Response
+    {
+        return $this->render('produits/showAll.html.twig', [
+            'produit' => $produit,
+
+        ]);
+    }
+    /**
+     * @Route("/{id}/showRecherche", name="produits_showRecherche", methods={"GET"})
+     */
+    public function showRecherche(Produits $produit): Response
+    {
+        return $this->render('produits/showRecherche.html.twig', [
+            'produit' => $produit,
+
+        ]);
+    }
 
     /**
      * @Route("/{id}/show", name="produits_show", methods={"GET"})
@@ -75,6 +95,16 @@ class ProduitsController extends AbstractController
     public function showAcheter(Produits $produit): Response
     {
         return $this->render('produits/showAcheter.html.twig', [
+            'produit' => $produit,
+
+        ]);
+    }
+    /**
+     * @Route("/{id}/recherche", name="produits_recherche", methods={"GET"})
+     */
+    public function recherche(Produits $produit): Response
+    {
+        return $this->render('produits/recherche.html.twig', [
             'produit' => $produit,
 
         ]);

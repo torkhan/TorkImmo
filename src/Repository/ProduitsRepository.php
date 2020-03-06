@@ -68,4 +68,32 @@ class ProduitsRepository extends ServiceEntityRepository
         ->getQuery()
         ->getResult();
     }
+
+    public function rechercheProduit($champs){
+        $result = $this->createQueryBuilder('p');
+        if($champs->getLocAchat() != null ){
+            $result->andWhere('p.LocAchat=:locAchat')
+                ->setParameter('locAchat', $champs->getLocAchat()->getId());
+
+        }
+        if($champs->getTypeProduits() != null ){
+            $result->andWhere('p.typeProduits=:typeProduit')
+                ->setParameter('typeProduit', $champs->getTypeProduits()->getId());
+        }
+        if($champs->getNombreChambre() != null ){
+            $result->andWhere('p.nombreChambre>=:nombreChambre')
+                ->setParameter('nombreChambre', $champs->getNombreChambre());
+
+        }
+        if($champs->getVille() != null ){
+            $result->andWhere('p.ville=:zip')
+                ->setParameter('zip', $champs->getVille()->getId());
+
+        }
+        if($champs->getPrixHt() != null ){
+            $result->andWhere('p.prixHt<=:prixHt')
+                ->setParameter('prixHt', $champs->getPrixHt());
+        }
+        return $result->getQuery()->getResult();
+    }
 }
