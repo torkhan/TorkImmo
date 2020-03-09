@@ -13,7 +13,7 @@
                     </h5>
                     <hr>
                     <div class="text-center">
-                        <img  src="{{ vich_uploader_asset(pag, 'photoBase') }}" style="width:50%; height: auto" alt=""></div>
+                        <img  src="{{ vich_uploader_asset(pag, 'photoBase') }}" class="imageCard" alt="1"></div>
                     <p class="card-text">
                         {{ pag.adresse }}
                     </p>
@@ -27,9 +27,9 @@
                         {{ pag.prixHt }}
                     </p>
 
-                    <a class="btn btn-primary text-white" href="{{ path('produits_showAcheter', {'id': pag.id}) }}">show</a>
+                    <a class="btn btn-primary text-white" href="{{ path('produits_showAcheter', {'id': pag.id}) }}">Voir</a>
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a class="btn btn-info text-white" href="{{ path('produits_edit', {'id': pag.id}) }}">edit</a>
+                        <a class="btn btn-info text-white" href="{{ path('produits_edit', {'id': pag.id}) }}">Modifier</a>
                     {% endif %}
                 </div>
 

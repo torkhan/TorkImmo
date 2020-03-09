@@ -57,27 +57,27 @@
                     <div class="carousel-inner">
                         {% if('photobase') != null %}
                         <div class="carousel-item active text-center" >
-                            <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" style="width:50%; height: auto" alt="1">
+                            <img src="{{ vich_uploader_asset(produit, 'photoBase') }}" class="imageCard"  alt="1">
                         </div>
                         {% endif %}
                         {% if(produit.image1) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo1') }}" style="width:50%; height: auto" alt="2">
+                            <img src="{{ vich_uploader_asset(produit, 'photo1') }}" class="imageCard" alt="2">
                         </div>
                         {% endif %}
                         {% if(produit.image2) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo2') }}" style="width:50%; height: auto" alt="3">
+                            <img src="{{ vich_uploader_asset(produit, 'photo2') }}" class="imageCard" alt="3">
                         </div>
                         {% endif %}
                         {% if(produit.image3) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo3') }}" style="width:50%; height: auto" alt="4">
+                            <img src="{{ vich_uploader_asset(produit, 'photo3') }}" class="imageCard" alt="4">
                         </div>
                         {% endif %}
                         {% if(produit.image4) != "" %}
                         <div class="carousel-item text-center">
-                            <img src="{{ vich_uploader_asset(produit, 'photo4') }}" style="width:50%; height: auto" alt="5">
+                            <img src="{{ vich_uploader_asset(produit, 'photo4') }}" class="imageCard" alt="5">
                         </div>
                             {% dump(produit) %}
                         {% endif %}
@@ -101,7 +101,7 @@
 
 
         {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('produits_edit', {'id': produit.id}) }}">edit</a>
+            <a  class="btn btn-warning text-white" href="{{ path('produits_edit', {'id': produit.id}) }}">Modifier</a>
 
             {{ include('produits/_delete_form.html.twig') }}
         {% endif %}

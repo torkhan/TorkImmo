@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zip{% endblock %}
+
+{% block body %}
+    <h1>Zip</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ zip.id }}</td>
+            </tr>
+            <tr>
+                <th>NomVille</th>
+                <td>{{ zip.nomVille }}</td>
+            </tr>
+            <tr>
+                <th>ZipCode</th>
+                <td>{{ zip.zipCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('zip_index') }}">back to list</a>
+
+    <a href="{{ path('zip_edit', {'id': zip.id}) }}">edit</a>
+
+    {{ include('zip/_delete_form.html.twig') }}
+{% endblock %}

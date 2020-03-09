@@ -25,7 +25,7 @@ class LouerController extends AbstractController
             4/*limit per page*/
         );
 
-        return $this->render('louer/recherche.html.twig', [
+        return $this->render('louer/index.html.twig', [
             'produits' => $sql,
             'pagination' => $pagination,
         ]);

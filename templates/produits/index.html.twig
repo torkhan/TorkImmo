@@ -17,9 +17,8 @@
                         {{ pag.typeProduits.type }}
                     </h5>
                     <hr>
-                   {# {% if pag.filename %}
-                    {% endif %}#}
-                    <img src="{{ vich_uploader_asset(pag, 'photoBase') }}" style="width:50%; height: auto" class="card-img-top" alt="">
+
+                    <img src="{{ vich_uploader_asset(pag, 'photoBase') }}"  class="card-img-top" alt="1">
                     <p class="card-text">
                         {{ pag.adresse }}
                     </p>
@@ -33,10 +32,10 @@
                         {{ pag.prixHt }}
                     </p>
 
-                    <a class="btn btn-primary text-white" href="{{ path('produits_showAll', {'id': pag.id}) }}">show</a>
+                    <a class="btn btn-primary text-white" href="{{ path('produits_showAll', {'id': pag.id}) }}">Voir</a>
 
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a class="btn btn-info text-white" href="{{ path('produits_edit', {'id': pag.id}) }}">edit</a>
+                        <a class="btn btn-info text-white" href="{{ path('produits_edit', {'id': pag.id}) }}">Modifier</a>
                     {% endif %}
                 </div>
 

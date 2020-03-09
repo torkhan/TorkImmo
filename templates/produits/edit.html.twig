@@ -4,12 +4,16 @@
 
 {% block body %}
     <div class="container">
+        <div class="row">
     <h1>Modifier le produit</h1>
+        <h1 class="ml-auto"><a href="{{ path('produits_index') }}">Retour à la liste</a></h1>
+        </div>
 
-    {{ include('produits/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('produits/_form.html.twig', {'button_label': 'Valider'}) }}
 
-    <a href="{{ path('produits_index') }}">back to list</a>
+
 
     {{ include('produits/_delete_form.html.twig') }}
+
     </div>
 {% endblock %}

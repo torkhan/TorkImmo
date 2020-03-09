@@ -39,14 +39,16 @@
 
                         <div class="card ">
 
-                            <img  class="mx-auto" src="{{ vich_uploader_asset(tab, 'photoBase') }}" style="width:50%; height: auto" alt="11">
+                            <img  class="mx-auto imageCard" src="{{ vich_uploader_asset(tab, 'photoBase') }}"  alt="11">
                             <div class="card-body">
                                 <h5 class="card-title"> {{ tab.typeProduits.type }}&nbsp{{ tab.ville.nomVille }} </h5>
                                 <p class="card-text"> {{  tab.description }}</p>
                                 <p class="card-text"> {{  tab.prixHt }}</p>
+                                <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a>
                             </div>
 
                         </div>
+
 
                     {% endfor %}
 
@@ -57,11 +59,12 @@
                     {% for tab in tab2 %}
                         <div class="card ">
 
-                            <img class="mx-auto" src="{{ vich_uploader_asset(tab, 'photoBase') }}" style="width:50%; height: auto" alt="11">
+                            <img class="mx-auto  imageCard" src="{{ vich_uploader_asset(tab, 'photoBase') }}"  alt="11">
                             <div class="card-body">
                                 <h5 class="card-title"> {{ tab.typeProduits.type }} &nbsp {{ tab.ville.nomVille }} </h5>
                                 <p class="card-text"> {{  tab.description }}</p>
                                 <p class="card-text"> {{  tab.prixHt }}</p>
+                                <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a>
                             </div>
 
                         </div>
@@ -82,7 +85,7 @@
         </a>
     </div>
     <!--Bouton filter-->
-    <div class="border  mb-5 mt-3 w-50 mx-auto">
+   <div class="border  mb-5 mt-3 w-50 mx-auto">
         <div class="row mx-auto" id="filtre">
             <h6 class="display-4 text-center">Recherche rapide</h6>
             <a class="btn btn-dark mt-2 mb-2 mr-2 ml-auto " id="titreFiltre" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -124,11 +127,11 @@
                 </div>
                 <a class="row">
                     <button type="submit" class="btn btn-outline-dark btn-lg btn-block">Rechercher</button>
-                </div>
-                {{ form_end(form) }}
+
+                    {{ form_end(form) }}
             </div>
         </div>
-    </div>
+   </div>
 
     <div class="row mb-2 col-md-12 w-100 infomap ml-0">
         <div class="col-md-5 mb-3 mx-auto" id="bref">
@@ -148,10 +151,10 @@
         </div>
 
     </div>
+    {% block javascripts %}
+
+        <script src="{{ asset("libs/js/index.js") }}"></script>
+    {% endblock %}
 {% endblock %}
 
-{% block javascripts %}
-
-    <script> href="{{ asset("libs/js/index.js") }}"</script>
-{% endblock %}
 

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Zip{% endblock %}
+
+{% block body %}
+    <h1>Edit Zip</h1>
+
+    {{ include('zip/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('zip_index') }}">back to list</a>
+
+    {{ include('zip/_delete_form.html.twig') }}
+{% endblock %}

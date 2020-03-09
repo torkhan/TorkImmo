@@ -150,7 +150,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/libs/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -159,15 +159,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\templates\produits" />
-      <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\templates\recherche" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\public\libs\images" />
       <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\src\Form" />
       <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\src\Repository" />
       <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\src\Entity" />
       <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\config\packages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\templates\produits" />
+      <recent name="C:\Users\62014-55-11\Documents\GitHubTorkImmo\TorkImmo\templates\recherche" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -197,6 +198,7 @@
       <workItem from="1583305226298" duration="28439000" />
       <workItem from="1583409564280" duration="12060000" />
       <workItem from="1583477871104" duration="13942000" />
+      <workItem from="1583737984333" duration="21289000" />
     </task>
     <servers />
   </component>

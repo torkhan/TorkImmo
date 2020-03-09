@@ -4,10 +4,16 @@
 
 {% block body %}
     <div class="container">
+        <div class="row">
     <h1>Zone de création d'un nouveau bien</h1>
-
+        <h1 class="ml-auto"><a href="{{ path('produits_index') }}">Retour à la liste</a></h1>
+        </div>
     {{ include('produits/_form.html.twig') }}
 
-    <a href="{{ path('produits_index') }}">back to list</a>
+
+        <a href="{{ path('zip_index') }}">Ajouter une ville</a>
+
+
+
     </div>
 {% endblock %}

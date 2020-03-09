@@ -18,7 +18,7 @@ class HomeController extends AbstractController
      */
     public function index(Request $request, ProduitsRepository $produitsRepository, PaginatorInterface $paginator)
     {
-        $recherche = new Recherche();
+        $recherche = new Recherche();//La recherche
 
         $articles = $this->recent($produitsRepository);
 
@@ -46,14 +46,14 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
-            'tab1' => $tab1,
+            'tab1' => $tab1,//sépare en 2 tableaux pour avoir 2 carroussels de 3 biens
             'tab2' => $tab2,
         ]);
     }
 
     public function recent($produitsRepository)
     {
-        $articles = $produitsRepository->findBy([], ['updatedAt' => 'desc'], 6);
+        $articles = $produitsRepository->findBy([], ['updatedAt' => 'desc'], 6);//recevoir les 6 derniers biens créés pour affichage carroussel index
         return $articles;
 
     }
