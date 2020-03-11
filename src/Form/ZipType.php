@@ -21,6 +21,7 @@ class ZipType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Zip::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

@@ -38,6 +38,7 @@ class RechercheType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Recherche::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

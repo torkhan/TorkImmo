@@ -3,9 +3,13 @@
 {% block title %}New Zip{% endblock %}
 
 {% block body %}
-    <h1>Create new Zip</h1>
-
+    <div class="container">
+        <div class="row">
+    <h1>Ajout nouvelle ville</h1>
+        <h1 class="ml-auto"><a href="{{ path('zip_index') }}">Retour à la liste</a></h1>
+        </div>
     {{ include('zip/_form.html.twig') }}
 
-    <a href="{{ path('zip_index') }}">back to list</a>
+
+    </div>
 {% endblock %}

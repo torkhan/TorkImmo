@@ -52,6 +52,7 @@ class LouerController extends AbstractController
         return $this->render('produits/new.html.twig', [
             'produit' => $produit,
             'form' => $form->createView(),
+
         ]);
     }
 

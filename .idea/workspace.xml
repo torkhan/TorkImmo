@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -199,6 +200,8 @@
       <workItem from="1583409564280" duration="12060000" />
       <workItem from="1583477871104" duration="13942000" />
       <workItem from="1583737984333" duration="21289000" />
+      <workItem from="1583823830277" duration="26488000" />
+      <workItem from="1583910117818" duration="10059000" />
     </task>
     <servers />
   </component>
@@ -218,10 +221,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2609" y="293" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583413585927" />
-    <state x="2656" y="451" width="448" height="279" key="ComposerInitDialogKey" timestamp="1583244534066">
+    <state x="2656" y="451" width="448" height="279" key="ComposerInitDialogKey" timestamp="1583826927949">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2656" y="451" width="448" height="279" key="ComposerInitDialogKey/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583244534066" />
+    <state x="2656" y="451" width="448" height="279" key="ComposerInitDialogKey/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583826927949" />
     <state x="2659" y="293" key="FileChooserDialogImpl" timestamp="1583240188464">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -234,6 +237,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2020" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583491889253" />
+    <state x="2688" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583919934770">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2688" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1583919934770" />
     <state x="2577" y="145" width="606" height="789" key="find.popup" timestamp="1583249790424">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

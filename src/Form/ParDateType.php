@@ -23,6 +23,7 @@ class ParDateType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => ParDate::class,
+            'translation_domain' => 'forms'
         ]);
     }
 }

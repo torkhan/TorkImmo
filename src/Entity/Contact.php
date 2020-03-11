@@ -28,8 +28,8 @@ class Contact
      *  @Assert\Length(
      *      min = 2,
      *      max = 50,
-     *      minMessage = "Your first name must be at least {{ 3 }} characters long",
-     *      maxMessage = "Your first name cannot be longer than {{ 50 }} characters"
+     *      minMessage = "Votre prénom doit contenir au minimun {{ 3 }} caractères ",
+     *      maxMessage = "Maximum {{ 50 }} characters"
      * )
      */
     private $nom;
@@ -38,7 +38,7 @@ class Contact
      * @ORM\Column(type="string", length=100)
      *
      *  * @Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email."
+     *     message = "'{{ value }}' n'est pas un Email valide."
      * )
      */
     private $email;

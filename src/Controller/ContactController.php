@@ -50,13 +50,13 @@ class ContactController extends AbstractController
 
 
             $mailer->send($message);
-            dump($message);
 
-            /* return $this->redirectToRoute('home');*/
+
+           return $this->redirectToRoute('home');
 
         }
 
-        return $this->render('contact/recherche.html.twig', [
+        return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
             'form' => $form->createView()
 

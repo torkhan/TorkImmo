@@ -11,9 +11,13 @@
     {{ include('produits/_form.html.twig') }}
 
 
-        <a href="{{ path('zip_index') }}">Ajouter une ville</a>
+        <a class="btn btn-warning text-white mb-5" href="{{ path('zip_index') }}">Ajouter une ville</a>
 
 
 
     </div>
+    {% block javascripts %}
+
+        <script src="{{ asset("libs/js/index.js") }}"></script>
+    {% endblock %}
 {% endblock %}

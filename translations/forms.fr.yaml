@@ -7,4 +7,19 @@ Loc achat : Loc achat
 Type produits : Type produits
 Nombre chambre : Nombre chambre
 Ville : Ville
-
+Prix ht : Prix ht
+Adresse :	Adresse
+Surface	: Surface
+Longitude : Longitude
+Latitude : Latitude
+Photo base:	Photo base
+Photo1:	Photo1
+Photo2:	Photo2
+Photo3:	Photo3
+Photo4:	Photo4
+Date de: creation	Date de creation
+Year:	Year
+Month: 	Month
+Day: Day
+Description:	Description
+Date de creation:	Date de creation

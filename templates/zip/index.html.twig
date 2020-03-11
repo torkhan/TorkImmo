@@ -25,8 +25,8 @@
                 <td>{{ zip.nomVille }}</td>
                 <td>{{ zip.zipCode }}</td>
                 <td>
-                    <a href="{{ path('zip_show', {'id': zip.id}) }}">show</a>
-                    <a href="{{ path('zip_edit', {'id': zip.id}) }}">edit</a>
+                    <a class="btn btn-primary text-white href="{{ path('zip_show', {'id': zip.id}) }}">voir</a>
+                    <a class="btn btn-info text-white" href="{{ path('zip_edit', {'id': zip.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,6 +37,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('zip_new') }}">Create new</a>
+    <a class="btn btn-warning text-white" href="{{ path('zip_new') }}">Ajouter</a>
 </div>
 {% endblock %}

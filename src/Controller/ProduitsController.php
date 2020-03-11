@@ -27,7 +27,7 @@ class ProduitsController extends AbstractController
             $request->query->getInt('page', 1), /*page number*/
             4/*limit per page*/
         );
-        return $this->render('produits/recherche.html.twig', [
+        return $this->render('produits/index.html.twig', [
             'produits' => $produitsRepository->findAll(),
             'pagination' => $pagination,
         ]);
@@ -63,6 +63,7 @@ class ProduitsController extends AbstractController
      */
     public function showAll(Produits $produit): Response
     {
+        $this->marker($produit);
         return $this->render('produits/showAll.html.twig', [
             'produit' => $produit,
 
@@ -73,6 +74,7 @@ class ProduitsController extends AbstractController
      */
     public function showRecherche(Produits $produit): Response
     {
+        $this->marker($produit);
         return $this->render('produits/showRecherche.html.twig', [
             'produit' => $produit,
 
@@ -84,6 +86,7 @@ class ProduitsController extends AbstractController
      */
     public function show(Produits $produit): Response
     {
+        $this->marker($produit);
         return $this->render('produits/show.html.twig', [
             'produit' => $produit,
 
@@ -94,6 +97,7 @@ class ProduitsController extends AbstractController
      */
     public function showAcheter(Produits $produit): Response
     {
+        $this->marker($produit);
         return $this->render('produits/showAcheter.html.twig', [
             'produit' => $produit,
 
@@ -142,5 +146,22 @@ class ProduitsController extends AbstractController
         }
 
         return $this->redirectToRoute('produits_index');
+    }
+    public function marker($articles){
+
+
+
+        $array = [];//passage resultat bdd en json pour l affichage des markers
+
+            $seau = [
+                'adresse' => $articles->getAdresse(),
+                'prixHt' => $articles->getPrixHt(),
+                'longitude' => $articles->getLongitude(),
+                'latitude' => $articles->getLatitude(),
+                'typeProduits' => $articles->getTypeProduits()->getType(),
+            ];array_push($array, $seau);
+        dump($array);
+        file_put_contents('libs/json/marker.json', json_encode($array)) ;
+
     }
 }

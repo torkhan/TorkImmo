@@ -96,6 +96,7 @@
 
             </tr>
 
+
             </tbody>
         </table>
 
@@ -106,4 +107,15 @@
             {{ include('produits/_delete_form.html.twig') }}
         {% endif %}
     </div>
+    <div class="col-md-8 mb-3 mx-auto">
+        <div id="map">
+
+        </div>
+
+
+    </div>
+{% block javascripts %}
+    <script src="{{ asset("libs/js/mapTrajet.js") }}"></script>
+
+{% endblock %}
 {% endblock %}
