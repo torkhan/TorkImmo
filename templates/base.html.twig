@@ -17,39 +17,40 @@
 
 <body>
 <header>
-    <div class="navbar bg-secondary text-white mb-5">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-white mb-5">
         <a href="{{ path('home') }}"> <img src="{{ asset("libs/images/logo.jpg") }}" alt="logo"></a>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ path('produits_index') }}">Tout nos biens</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ path('louer_index') }}">Louer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('acheter') }}">Acheter</a>
-            </li>
-        </ul>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('home') }}">Accueil</a>
-            </li>
-
-
-
-
-                {% if is_granted('ROLE_ADMIN') %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="nav justify-content-center">
                 <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
-            {% else %}
+                    <a class="nav-link active" href="{{ path('produits_index') }}">Tout nos biens</a>
                 </li>
-               {# <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-                </li>#}
-            {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('louer_index') }}">Louer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('acheter') }}">Acheter</a>
+                </li>
+            </ul></div>
+        <div class="collapse navbar-collapse justify-content-right" id="navbarNav">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                    <a class="nav-link " href="{{ path('app_logout') }}">Deconnexion</a>
+                {% else %}
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
 
-        </ul>
-    </div>
+
 </header>
 
 

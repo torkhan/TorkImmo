@@ -32,7 +32,7 @@ class HomeController extends AbstractController
                 4/*limit per page*/
 
             );
-            return $this->render('produits/recherche.html.twig', ['pagination' => $pagination]);
+            return $this->render('produits/index.html.twig', ['pagination' => $pagination]);
 
         }
         $tab1=[];

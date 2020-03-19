@@ -24,7 +24,7 @@ class LocAchat
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="LocAchat_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="LocAchat")
      */
     private $produits;
 

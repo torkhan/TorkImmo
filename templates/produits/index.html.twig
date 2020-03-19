@@ -36,6 +36,8 @@
 
                     {% if is_granted('ROLE_ADMIN') %}
                         <a class="btn btn-info text-white" href="{{ path('produits_edit', {'id': pag.id}) }}">Modifier</a>
+                        <a  class="btn btn-success float-right" href="{{ path('panier_add', {'id': pag.id}) }}"><span class="fa fa-shopping-cart mr-1"></span>Ajouter</a>
+
                     {% endif %}
                 </div>
 

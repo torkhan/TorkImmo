@@ -12,7 +12,7 @@ class PageAdminController extends AbstractController
      */
     public function index()
     {
-        return $this->render('page_admin/recherche.html.twig', [
+        return $this->render('page_admin/index.html.twig', [
             'controller_name' => 'PageAdminController',
         ]);
     }

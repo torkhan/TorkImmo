@@ -66,7 +66,7 @@ a.textCard:hover {
 }
 
 .cyber:last-of-type {
-    width: 0px;
+    width: 0;
     animation: reveal 7s infinite;
 }
 
@@ -82,7 +82,7 @@ h3.titre_fard {
     font-weight: 300;
     line-height: 1.14;
     letter-spacing: 0.8px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 #aide {
@@ -117,21 +117,21 @@ h3.titre_fard {
         margin-left: -800px;
     }
     35% {
-        margin-left: 0px;
+        margin-left: 0;
     }
     100% {
-        margin-left: 0px;
+        margin-left: 0;
     }
 }
 
 @keyframes reveal {
     0% {
         opacity: 0;
-        width: 0px;
+        width: 0;
     }
     20% {
         opacity: 1;
-        width: 0px;
+        width: 0;
     }
     30% {
         width: 650px;
@@ -148,4 +148,19 @@ h3.titre_fard {
 
 .imageCard{
     width:50%; height: auto;
+}
+.card-deck{
+    height: 50%;
+}
+
+.carrou{
+    height:500px;
+}
+/*debut media-queries*/
+/*smartphones*/
+
+@media screen and (max-width: 319px) {
+    .carrou{
+        height:800px;
+    }
 }

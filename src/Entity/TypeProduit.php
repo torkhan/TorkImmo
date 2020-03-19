@@ -24,7 +24,7 @@ class TypeProduit
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="typeProduits_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="typeProduits")
      */
     private $produits;
 

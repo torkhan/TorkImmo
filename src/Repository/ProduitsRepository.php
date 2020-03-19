@@ -42,6 +42,8 @@ class ProduitsRepository extends ServiceEntityRepository
             ->orWhere('z.zip like :val')
             ->orWhere('t.typeProduit like :val')
             ->orWhere('l.locAchat like :val')
+            ->orWhere('p.prix like :val')
+            ->orWhere('p.nom like :val')
 
             ->setParameter('val', '%'.$value.'%')
             ->orderBy('p.id', 'ASC')

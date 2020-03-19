@@ -1,0 +1,17 @@
+.card {
+    max-width: 500px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+
+
+}
+#style{
+    margin-top: 5%;
+}
+
+#bien{
+    font-size: 40px;
+}

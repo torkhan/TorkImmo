@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="bg-light p-3">
+            <div class="row">
+                <h1>Votre panier</h1>
+                <h1 class="ml-auto"><a href="javascript:history.go(-1)">Retour aux produits</a></h1>
+            </div>
+        </div>
+        {% if item | length %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in item %}
+                    <tr>
+                        <td>{{ item.produits.nom }}</td>
+                        <td>{{ item.produits.prix }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.produits.prix * item.quantity }}</td>
+                        <td>
+                            <a href="{{ path('panier_remove', {'id': item.produits.id}) }}" class="btn btn-danger ">
+                                <span class="fa fa-trash" aria-hidden="true"></span></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total:</td>
+                    <td>{{ total }}</td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        {% else %}
+            <p>Votre panier est vide</p>
+        {% endif %}
+
+    </div>
+{% endblock %}

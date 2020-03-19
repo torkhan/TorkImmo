@@ -12,7 +12,7 @@ class VilleController extends AbstractController
      */
     public function index()
     {
-        return $this->render('ville/recherche.html.twig', [
+        return $this->render('ville/index.html.twig', [
             'controller_name' => 'VilleController',
         ]);
     }

@@ -108,7 +108,7 @@ class ProduitsController extends AbstractController
      */
     public function recherche(Produits $produit): Response
     {
-        return $this->render('produits/recherche.html.twig', [
+        return $this->render('produits/index.html.twig', [
             'produit' => $produit,
 
         ]);
@@ -160,7 +160,7 @@ class ProduitsController extends AbstractController
                 'latitude' => $articles->getLatitude(),
                 'typeProduits' => $articles->getTypeProduits()->getType(),
             ];array_push($array, $seau);
-        dump($array);
+
         file_put_contents('libs/json/marker.json', json_encode($array)) ;
 
     }

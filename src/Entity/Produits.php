@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -138,6 +139,16 @@ class Produits
      */
     private $image4;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prix;
+
 
     /**
      * @ORM\Column(type="datetime")
@@ -173,6 +184,31 @@ class Produits
 
         return $this;
     }
+    public function getprix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setprix(int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getnom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setnom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+
 
     public function getNombreChambre(): ?string
     {

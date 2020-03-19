@@ -29,7 +29,7 @@ class Zip
     private $zipCode;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="ville_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\Produits", mappedBy="ville")
      */
     private $produits;
 

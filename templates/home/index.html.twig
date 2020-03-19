@@ -29,7 +29,7 @@
 
 
     <h1 class="text-center mb-5 mt-4">Quelques nouveautés</h1>
-
+<div class="carrou">
     <div id="carouselExampleControls" class="carousel slide w-75 mx-auto mb-5" data-ride="carousel">
         <div class="carousel-inner ">
             <div class="carousel-item active">
@@ -44,8 +44,9 @@
                                 <h5 class="card-title"> {{ tab.typeProduits.type }}&nbsp{{ tab.ville.nomVille }} </h5>
                                 <p class="card-text"> {{  tab.description }}</p>
                                 <p class="card-text"> {{  tab.prixHt }}</p>
-                                <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a>
                             </div>
+                                <div class="text-center align-bottom"> <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a></div>
+
 
                         </div>
 
@@ -59,13 +60,14 @@
                     {% for tab in tab2 %}
                         <div class="card ">
 
-                            <img class="mx-auto  imageCard" src="{{ vich_uploader_asset(tab, 'photoBase') }}"  alt="11">
+                            <img class="mx-auto imageCard" src="{{ vich_uploader_asset(tab, 'photoBase') }}"  alt="12">
                             <div class="card-body">
                                 <h5 class="card-title"> {{ tab.typeProduits.type }} &nbsp {{ tab.ville.nomVille }} </h5>
                                 <p class="card-text"> {{  tab.description }}</p>
                                 <p class="card-text"> {{  tab.prixHt }}</p>
-                                <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a>
                             </div>
+                               <div class="text-center align-bottom"> <a  href="{{ path('produits_showAll', {'id': tab.id}) }}"> Voir </a></div>
+
 
                         </div>
 
@@ -83,6 +85,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
     </div>
     <!--Bouton filter-->
    <div class="border  mb-5 mt-3 w-50 mx-auto">
